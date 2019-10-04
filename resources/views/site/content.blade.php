@@ -127,8 +127,8 @@
 						<img src="{{ asset('assets/img/icons/service-icon-1.png')}}" alt="" />
 					</div>
 					<div class="service-desc">
-						<h5>{{ $service->name }}</h5>
-						<p>Vestibulum tincidunt enim in pharetra malesuada. Duis semper magna metus electram accommodare.</p>
+						<h5>{{ $services[0]->name }}</h5>
+						<p>{{ $services[0]->text }}</p>
 					</div>
                 </div>
 				</div>
@@ -140,8 +140,8 @@
 						<img src="{{ asset('assets/img/icons/service-icon-2.png')}}" alt="" />
 					</div>
 					<div class="service-desc">
-						<h5>Web Design</h5>
-						<p>Vestibulum tincidunt enim in pharetra malesuada. Duis semper magna metus electram accommodare.</p>
+						<h5>{{ $services[1]->name }}</h5>
+						<p>{{ $services[1]->text }}</p>
 					</div>
                 </div>
 				</div>
@@ -153,8 +153,8 @@
 						<img src="{{ asset('assets/img/icons/service-icon-3.png')}}" alt="" />
 					</div>
 					<div class="service-desc">
-						<h5>Photography</h5>
-						<p>Vestibulum tincidunt enim in pharetra malesuada. Duis semper magna metus electram accommodare.</p>
+						<h5>{{ $services[2]->name }}</h5>
+						<p>{{ $services[2]->text }}</p>
 					</div>
                 </div>
 				</div>
@@ -166,8 +166,8 @@
 						<img src="{{ asset('assets/img/icons/service-icon-4.png')}}" alt="" />
 					</div>
 					<div class="service-desc">
-						<h5>Cloud System</h5>
-						<p>Vestibulum tincidunt enim in pharetra malesuada. Duis semper magna metus electram accommodare.</p>
+						<h5> {{ $services[3]->name }}</h5>
+						<p>{{ $services[3]->text }}</p>
 					</div>
                 </div>
 				</div>
@@ -205,9 +205,14 @@
 			</div>
 		</div>
     <div class="row">
+
+    	<form action="{{ route('home') }}" method="post">
+  
+
         <div class="col-lg-8">
             <div class="boxed-grey">
                 <form id="contact-form">
+                	      @csrf
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
@@ -237,20 +242,23 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="name">
-                                Message</label>
+                            Message</label>
                             <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required"
                                 placeholder="Message"></textarea>
                         </div>
                     </div>
                     <div class="col-md-12">
                         <button type="submit" class="btn btn-skin pull-right" id="btnContactUs">
-                            Send Message</button>
+                        Message</button>
                     </div>
                 </div>
                 </form>
             </div>
         </div>
-		
+        
+
+		</form>
+
 		<div class="col-lg-4">
 			<div class="widget-contact">
 				<h5>Main Office</h5>
